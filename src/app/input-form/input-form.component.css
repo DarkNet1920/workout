@@ -1,0 +1,81 @@
+.username{
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    height: 30px;
+    width: 300px;
+}
+.username::placeholder{
+    text-align: center;
+}
+.listlabel{
+    position: absolute;
+    top: 35px;
+    left: 500px;
+}
+.workoutlist{
+    position: absolute;
+    top: 30px;
+    left: 670px;
+    height: 35px;
+    width: 300px;
+}
+.time{
+    position: absolute;
+    top: 30px;
+    left: 1050px;
+    height: 30px;
+    width: 300px;
+}
+.time::placeholder{
+    text-align: center;
+}
+.add_btn{
+    position: relative;
+    top: 30px;
+    left: 400px;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    background: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 16px;
+    font-weight: bold;
+    border-color: whitesmoke;
+}
+.workout_table{
+    position: relative;
+    top: 100px;
+    border: 1px solid black;
+    width: 1100px;
+}
+.workout_table thead{
+    text-align: center;
+}
+.workout_table tbody{
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.searchbar{
+    position: relative;
+    top: 50px;
+    height: 30px;
+    width: 200px;
+}
+.searchbar::placeholder{
+    text-align: center;
+}
+.workout_table_list{
+    position: relative;
+    top: 20px;
+    left: 800px;
+}
+.pageControl{
+    position: absolute;
+    top: 600px;
+    left: 550px;
+}

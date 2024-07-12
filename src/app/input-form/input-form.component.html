@@ -1,0 +1,58 @@
+<form (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Enter Full Name" [(ngModel)]="userInput" name="userInput" class="username" required
+    autocomplete="off"><br />
+  <label for="workoutInput" class="listlabel">Choose Your Workout : </label>
+  <select [(ngModel)]="workoutInput" name="workoutInput" class="workoutlist" (change)="updateSelectedCount($event)"
+    required multiple>
+    <option value="Running">Running</option>
+    <option value="Cycling">Cycling</option>
+    <option value="Cardio">Cardio</option>
+    <option value="Fat Loss">Fat Loss</option>
+    <option value="Muscle Training">Muscle Training</option>
+    <option value="ABS & Core">ABS & Core</option>
+  </select>
+  <!-- <p>Number of selected options: {{ selectedOptions.length }}</p>     -->
+  <br />
+  <input type="text" placeholder="Workout Time in Minutes" [(ngModel)]="timeInput" name="timeInput" class="time"
+    required autocomplete="off"><br />
+  <button type="submit" class="add_btn">ADD WORKOUT</button>
+</form>
+
+<input type="text" [(ngModel)]="searchText" placeholder="Search by name..." (change)="filterItems()" class="searchbar">
+
+<div class="workout_table_list">
+<label for="list" class="listlabel2">Filter By Workout : </label>
+<select name="list" id="list" [(ngModel)]="searchWorkout" (change)="filterWorkouts()" required>
+  <option value="none">
+    All
+  </option>
+  <option value="Running">Running</option>
+  <option value="Cycling">Cycling</option>
+  <option value="Cardio">Cardio</option>
+  <option value="Fat Loss">Fat Loss</option>
+  <option value="Muscle Training">Muscle Training</option>
+  <option value="ABS & Core">ABS & Core</option>
+</select>
+</div>
+
+<table class="workout_table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Workout</th>
+      <th>Number Of Workouts</th>
+      <th>Time (in Minutes)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of filteredItems || filteredWorkouts |paginate:{itemsPerPage:pageSize,currentPage:currentpage};let i = index ">
+      <th scope="row">{{i+1}}</th>
+      <td>{{ user.userInput }}</td>
+      <td>{{ user.workoutInput }}</td>
+      <td>{{ selectedOptions.length }}</td>
+      <td>{{ user.timeInput }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<pagination-controls (pageChange)="currentpage=$event" class="pageControl"></pagination-controls>
